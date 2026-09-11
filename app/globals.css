@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --navy-950: #0a1628;
+  --navy-900: #0f1f35;
+  --navy-800: #16283f;
+  --white-warm: #faf9f6;
+  --gray-50: #f5f6f7;
+  --gray-100: #e8eaed;
+  --gray-200: #d3d7dd;
+  --gray-300: #aeb4bd;
+  --gray-400: #838a96;
+  --gray-500: #5f6772;
+  --gray-600: #444b55;
+  --gray-700: #2b3138;
+  --brand-300: #40c7ff;
+  --brand-400: #0db8ff;
+  --brand-500: #00a0e3;
+  --brand-600: #007cb0;
+  --brand-700: #005f87;
+
+  --background: var(--white-warm);
+  --foreground: var(--navy-950);
+}
+
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-white-warm: var(--white-warm);
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 1px 2px 0 rgb(10 22 40 / 0.04), 0 1px 8px 0 rgb(10 22 40 / 0.04);
+  --shadow-card-hover: 0 4px 12px 0 rgb(10 22 40 / 0.06), 0 12px 32px 0 rgb(10 22 40 / 0.08);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+}
+
+.kicker-on-dark {
+  color: var(--brand-400);
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 40s linear infinite;
+}
+
+.animate-rotate-slow-reverse {
+  animation: rotate-slow-reverse 32s linear infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rotate-slow,
+  .animate-rotate-slow-reverse,
+  .animate-pulse-soft {
+    animation: none;
+  }
+}
